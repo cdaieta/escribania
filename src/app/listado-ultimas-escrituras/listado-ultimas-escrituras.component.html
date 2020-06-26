@@ -1,0 +1,46 @@
+<div class="mat-elevation-z8">
+
+  <app-formulario></app-formulario>
+
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero de Escritura</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <!-- Tipo de Escritura Column -->
+    <ng-container matColumnDef="tipoEscritura">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de Escritura</th>
+      <td mat-cell *matCellDef="let row">{{row.tipoEscritura}}</td>
+    </ng-container>
+
+    <!-- Fecha de Creacion Column -->
+    <ng-container matColumnDef="fechaDeCreacion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha de Creacion</th>
+      <td mat-cell *matCellDef="let row">{{row.fechaDeCreacion}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaDePago">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha de Pago</th>
+      <td mat-cell *matCellDef="let row">{{row.fechaDePago}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[10, 25, 50, 100, 250]">
+  </mat-paginator>
+</div>
