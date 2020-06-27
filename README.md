@@ -16,3 +16,4 @@ ng generate component clientes/seleccionar-cliente
 ng generate component clientes/alta-cliente
 ng generate component clientes/modificacion-cliente
 ng generate component clientes/baja-cliente
+# escribania
